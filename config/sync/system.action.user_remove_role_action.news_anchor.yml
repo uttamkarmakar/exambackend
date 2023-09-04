@@ -1,0 +1,14 @@
+uuid: 7f4d2869-0961-49cb-82de-6ec1608647d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_anchor
+  module:
+    - user
+id: user_remove_role_action.news_anchor
+label: 'Remove the News Anchor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: news_anchor

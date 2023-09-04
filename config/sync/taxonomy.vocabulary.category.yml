@@ -1,0 +1,8 @@
+uuid: bd6ea34d-1a06-4c7a-9ac0-02828b1d50ec
+langcode: en
+status: true
+dependencies: {  }
+name: Category
+vid: category
+description: 'Use this vocabulary to hold categorization of news'
+weight: 0

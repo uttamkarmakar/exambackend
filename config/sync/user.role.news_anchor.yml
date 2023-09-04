@@ -1,0 +1,34 @@
+uuid: 84a50014-4618-4614-ac02-c02cebe82216
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - admin_toolbar_search
+    - field_permissions
+    - node
+    - shortcut
+    - toolbar
+    - tour
+id: news_anchor
+label: 'News Anchor'
+weight: 4
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer shortcuts'
+  - 'create field_editor_in_charge'
+  - 'create field_genre'
+  - 'create news content'
+  - 'edit any news content'
+  - 'edit field_editor_in_charge'
+  - 'edit field_genre'
+  - 'edit own field_editor_in_charge'
+  - 'edit own field_genre'
+  - 'use admin toolbar search'
+  - 'view field_editor_in_charge'
+  - 'view field_genre'
+  - 'view own field_editor_in_charge'
+  - 'view own field_genre'

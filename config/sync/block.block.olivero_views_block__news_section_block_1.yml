@@ -1,0 +1,38 @@
+uuid: d738f033-9031-424a-a736-0814d1851bd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news_section
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - olivero
+id: olivero_views_block__news_section_block_1
+theme: olivero
+region: content_below
+weight: 0
+provider: null
+plugin: 'views_block:news_section-block_1'
+settings:
+  id: 'views_block:news_section-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      news_anchor: news_anchor

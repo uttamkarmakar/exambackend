@@ -1,0 +1,30 @@
+uuid: f42f28b5-446d-4f9b-b964-20c6ef3bf166
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_category_head
+    - taxonomy.vocabulary.category
+  module:
+    - user
+id: user.user.field_category_head
+field_name: field_category_head
+entity_type: user
+bundle: user
+label: 'Category Head'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
