@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains theme functions for the Custom About Us module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function custom_about_us_theme($existing, $type, $theme, $path) {
+  return [
+    'custom_about_us_leadership' => [
+      'variables' => [
+        'leadership_settings' => [],
+      ],
+      'template' => 'custom-about-us-leadership',
+    ],
+    'anchor_user_details' => [
+      'variables' => [
+        'user_details' => [],
+        'news_nodes' => [],
+        'uid' => [],
+      ],
+      'template' => 'anchor-user-details',
+    ],
+  ];
+}

@@ -81,7 +81,6 @@ class NewsBlock extends BlockBase implements ContainerFactoryPluginInterface {
         ];
       }
     }
-
     return $build;
   }
 

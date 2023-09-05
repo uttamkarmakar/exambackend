@@ -1,0 +1,25 @@
+uuid: 62977116-b5e0-4e48-96af-34d9feb7711b
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_about_us
+    - system
+  theme:
+    - olivero
+id: olivero_anchoruserdetailsblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: anchor_user_details_block
+settings:
+  id: anchor_user_details_block
+  label: 'Anchor User Details Block'
+  label_display: visible
+  provider: custom_about_us
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /custom-about-us

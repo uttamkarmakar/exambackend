@@ -1,0 +1,29 @@
+_core:
+  default_config_hash: S8ukcTQJS7qYIOI_DcnvH_i9YrJdpCELSqweyApLxj0
+leadership_settings:
+  -
+    name: 'John Doe'
+    designation: CEO
+    linkedin_profile: 'https://www.linkedin.com/johndoe'
+    profile_image: 'public://leadership/profile-images/john_doe.jpg'
+  -
+    name: 'Jane Smith'
+    designation: CTO
+    linkedin_profile: 'https://www.linkedin.com/janesmith'
+    profile_image: 'public://leadership/profile-images/jane_smith.jpg'
+  -
+    name: 'Kunal Karmakar'
+    designation: CEO
+    linkedin_profile: 'http://exambackend.com/admin/leadership-form'
+    profile_image: '29'
+  -
+    name: nqwno
+    designation: njwnqo
+    linkedin_profile: 'http://exambackend.com/admin/leadership-form'
+    profile_image: '30'
+  -
+    name: kewk
+    designation: ekle
+    linkedin_profile: 'http://exambackend.com/admin/leadership-form'
+    profile_image: '31'
+anchor_user: null
