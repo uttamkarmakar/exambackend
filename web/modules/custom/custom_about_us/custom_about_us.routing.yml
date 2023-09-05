@@ -1,0 +1,16 @@
+custom_about_us.about_us:
+  path: '/custom-about-us'
+  defaults:
+    _title: 'About Us'
+    _controller: '\Drupal\custom_about_us\Controller\CustomAboutUsController::build'
+  requirements:
+    _permission: 'access content'
+
+
+custom_about_us.leadership_settings:
+  path: '/admin/leadership-form'
+  defaults:
+    _title: 'Leadership form'
+    _form: 'Drupal\custom_about_us\Form\LeadershipSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

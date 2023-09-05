@@ -1,0 +1,11 @@
+leadership_settings:
+  - name: 'John Doe'
+    designation: 'CEO'
+    linkedin_profile: 'https://www.linkedin.com/johndoe'
+    profile_image: 'public://leadership/profile-images/john_doe.jpg'
+  - name: 'Jane Smith'
+    designation: 'CTO'
+    linkedin_profile: 'https://www.linkedin.com/janesmith'
+    profile_image: 'public://leadership/profile-images/jane_smith.jpg'
+
+anchor_user: ''

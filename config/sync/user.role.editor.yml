@@ -1,0 +1,21 @@
+uuid: e45dc66f-d347-47ba-bb61-0c278afff7f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+id: editor
+label: Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'create field_category_head'
+  - 'create field_hash_tags'
+  - 'edit field_category_head'
+  - 'edit field_hash_tags'
+  - 'edit own field_category_head'
+  - 'edit own field_hash_tags'
+  - 'view field_category_head'
+  - 'view field_hash_tags'
+  - 'view own field_category_head'
+  - 'view own field_hash_tags'

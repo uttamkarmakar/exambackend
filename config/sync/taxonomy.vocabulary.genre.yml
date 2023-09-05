@@ -1,0 +1,8 @@
+uuid: 25c827b2-58f7-4954-b8a8-cee77a976284
+langcode: en
+status: true
+dependencies: {  }
+name: Genre
+vid: genre
+description: 'Use this vocabulary to holds the news genre present in the author.'
+weight: 0

@@ -1,0 +1,12 @@
+<div class="about-us">
+  {% for setting in leadership_settings %}
+    <div class="leader">
+      <h2>{{ setting.name }}</h2>
+      <p>{{ setting.designation }}</p>
+      <a href="{{ setting.linkedin_profile }}">LinkedIn Profile</a>
+     {% if setting.profile_image %}
+        <img src="{{setting.profile_image }}" alt="{{ setting.name }}'s Profile Image" />
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

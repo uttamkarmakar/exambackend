@@ -1,0 +1,18 @@
+<div class="anchor-user-details">
+  {% for userDetails in user_details %}
+    <div class="user-detail">
+      <h2>{{ userDetails.name }}</h2>
+      <div class="news-nodes">
+        <h3>News Nodes</h3>
+        {{ dump(news_nodes[2]) }}
+        <ul>
+          {% for content in news_nodes[2] %}
+            <li>
+              <h4>{{ content.title.value}}</h4>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for News Delete module.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_cron().
+ */
+function news_delete_cron() {
+  // Calculate the date 6 months ago.
+  $six_months_ago = strtotime('-6 months');
+
+  // Load news content older than 6 months.
+  $query = \Drupal::entityQuery('node')
+  // Adjust content type as needed.
+    ->condition('type', 'news')
+    ->condition('created', $six_months_ago, '<')
+    ->accessCheck(TRUE);
+  $nids = $query->execute();
+
+  $node_titles_to_delete = [];
+
+  if (!empty($nids)) {
+    $storage_handler = \Drupal::entityTypeManager()->getStorage('node');
+    $nodes = $storage_handler->loadMultiple($nids);
+
+    foreach ($nodes as $node) {
+      $node_titles_to_delete[] = $node->getTitle();
+      $node->delete();
+    }
+  }
+
+  // Send email notifications to all editors.
+  $editors = get_editors();
+  $subject = t('News Cleanup Notification');
+  $message = t('The following news articles were deleted:');
+
+  foreach ($node_titles_to_delete as $title) {
+    $message .= "\n" . $title;
+  }
+
+  foreach ($editors as $editor) {
+    // Adjust the email parameters as needed.
+    \Drupal::service('plugin.manager.mail')
+      ->mail('custom_news_cleanup', 'cleanup_notification', $editor->getEmail(), NULL, ['message' => $message, 'subject' => $subject]);
+  }
+}
+
+/**
+ * Get all editors from the 'editor' role.
+ *
+ * @return \Drupal\user\Entity\User[]
+ *   An array of user entities with the 'editor' role.
+ */
+function get_editors() {
+  $query = \Drupal::entityQuery('user')
+    ->condition('status', 1)
+    ->condition('roles', 'editor')
+    ->accessCheck(TRUE);
+  $uids = $query->execute();
+  return User::loadMultiple($uids);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function custom_news_cleanup_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'cleanup_notification':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
